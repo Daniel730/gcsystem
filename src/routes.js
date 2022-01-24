@@ -2,7 +2,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import index from "./pages/index";
-import Page from "./pages/Page";
 import store from "./store";
 
 export default function Routes() {
@@ -11,7 +10,7 @@ export default function Routes() {
             <Router>
                 <Switch>
                     <Route path="/" exact component={index} />
-                    <Route path="/:page" exact component={Page} />
+                    <Route path="/:page" component={index} />
                 </Switch>
             </Router>
         </Provider>
