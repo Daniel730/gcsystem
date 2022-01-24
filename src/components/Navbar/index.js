@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 
+import { links } from "../../config/links";
 import {
     FooterText,
     Sidebar,
@@ -8,8 +9,7 @@ import {
     SideFooter,
     SideHeader,
     SideItem,
-} from "../global";
-import { links } from "./links";
+} from "./style";
 
 export default function Navbar() {
     const { page } = useParams();
@@ -18,13 +18,17 @@ export default function Navbar() {
             <SideHeader>GC - Gestor de caixa</SideHeader>
             <SideContent>
                 {links.map((item) => {
-                    const { to, text } = item;
+                    const { to, text, path } = item;
                     const Icon = item.icon;
                     return (
-                        <Link to={to} style={{ textDecoration: "none" }}>
+                        <Link
+                            key={to}
+                            to={to}
+                            style={{ textDecoration: "none" }}
+                        >
                             <SideItem
                                 style={
-                                    page === to
+                                    page === path
                                         ? { backgroundColor: "#045de9" }
                                         : {}
                                 }

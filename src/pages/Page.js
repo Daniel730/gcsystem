@@ -2,21 +2,26 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { Container } from "../components/global/index";
+import GetSell from "./GetSell";
+import Home from "./Home";
+import InOut from "./InOut";
+import NewSell from "./NewSell";
+import Products from "./Products";
 
 function Body() {
     const { page } = useParams();
 
     switch (page) {
         case "reVenda":
-            return <div>Realizar vendas</div>;
+            return <NewSell />;
         case "vendas":
-            return <div>Vendas</div>;
-        case "cadProduto":
-            return <div>Cadastrar Produto</div>;
+            return <GetSell />;
+        case "produto":
+            return <Products />;
         case "entradaSaida":
-            return <div>Entrada e saida</div>;
+            return <InOut />;
         default:
-            return <div>Home</div>;
+            return <Home />;
     }
 }
 function Page() {
