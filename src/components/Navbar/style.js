@@ -78,11 +78,12 @@ export const SideItem = styled.span`
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     background-color: #09c6f9;
     color: white;
-    cursor: pointer;
-
+    transition: all 0.3s ease-out;
     :hover {
+        cursor: pointer;
         background-color: #045de9;
         color: white;
+        transform: translateY(-5px);
     }
 
     @media (max-width: 700px) {
