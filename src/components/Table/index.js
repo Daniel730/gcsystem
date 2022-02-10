@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 
 import Button from "../global/Button";
 import { Th, Td, Tr, Table } from "./style";
 
 export default function TableComponent(props) {
+    const history = useHistory();
     const { th, tb, tableList } = props;
     const buttonEdit = () => <AiOutlineEdit size="20px" color="orange" />;
     const buttonDelete = () => <AiOutlineDelete size="20px" color="red" />;
@@ -27,7 +29,9 @@ export default function TableComponent(props) {
                         <Th>
                             <Button
                                 style={{ padding: "5px 10px", margin: "5px 0" }}
-                                onClick={() => false}
+                                onClick={() =>
+                                    history.push("/adicionarProduto")
+                                }
                                 text="Adicionar"
                             />
                         </Th>

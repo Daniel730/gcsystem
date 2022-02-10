@@ -5,6 +5,7 @@ import { Container } from "../components/global/index";
 import GetSell from "./GetSell";
 import Home from "./Home";
 import InOut from "./InOut";
+import NewProduct from "./NewProduct";
 import NewSell from "./NewSell";
 import Products from "./Products";
 
@@ -20,6 +21,8 @@ function Body() {
             return <Products />;
         case "entradaSaida":
             return <InOut />;
+        case "adicionarProduto":
+            return <NewProduct />;
         default:
             return <Home />;
     }

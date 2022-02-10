@@ -12,11 +12,7 @@ export default function Button(props) {
             </ButtonIcon>
         );
     }
-    return (
-        <ButtonDefault onClick={() => onClick()} st>
-            {text}
-        </ButtonDefault>
-    );
+    return <ButtonDefault onClick={() => onClick()}> {text}</ButtonDefault>;
 }
 
 Button.propTypes = {
